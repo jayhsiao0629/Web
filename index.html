@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        p {
+            font-family: 'Lobster', cursive;
+        }
+
+        .gototop {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-family: verdana;
+            text-align: center;
+            background: #F63E3E;
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            border-radius: 50%;
+            text-decoration: none;
+            cursor: pointer;
+            /*先隱藏*/
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 導覽列 -->
+        <div class="corona-warn" id="corona-warn">
+            <div class="corona-warn-container">
+                <a href="https://www.cdc.gov.tw/" target="_blank"
+                    onclick="removeCoronaWarnBanner()">⚠️新型冠狀肺炎（武漢肺炎）相關情報</a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- 導覽列的頁首 -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">東京旅遊</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">導覽按鈕</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- 導覽列的項目 -->
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">首頁</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">行程 <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="圖文介紹行程1.html">Day1~Day3</a></li>
+                                <li><a href="圖文行程介紹2.html">Day4~Day6</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">相簿 <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="相簿3.html">Day1~Day2</a></li>
+                                <li><a href="相簿32.html">Day3~Day4</a></li>
+                                <li><a href="相簿33.html">Day5~Day6</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.klook.com/zh-TW/">票券</a></li>
+                        <li><a href="https://www.booking.com/index.zh-tw.html">訂房</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">旅遊 <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://travel.liontravel.com/category/zh-tw/index">國外團體</a></li>
+                                <li><a href="http://www.lifetour.com.tw/oversea/tw/">國內團體</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="https://www.startravel.com.tw/independent.aspx">國外自由行</a></li>
+                                <li><a href="https://trip.settour.com.tw/">國內自由行</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="text" placeholder="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-success">登入</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 輪播 -->
+        <div id="myCarousel" class="carousel slide">
+            <!-- 輪播指示 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- 輪播內容 -->
+            <div class="carousel-inner">
+                <!-- 第一個輪播項目 (包含圖片、標題與介紹) -->
+                <div class="item active">
+                    <img src="change4.jpg">
+                    <div class="carousel-caption">
+                        <h1>必訪景點－東京鐵塔</h1>
+                        <p class="lead">世界第三高的電波塔</p>
+                    </div>
+                </div>
+
+                <!-- 第二個輪播項目 (包含圖片、標題與介紹) -->
+                <div class="item">
+                    <img src="change5.jpg">
+                    <div class="carousel-caption">
+                        <h1>必訪景點－六本木之丘</h1>
+                        <p class="lead">站上巨人的肩膀，眺望東京的日與夜</p>
+                    </div>
+                </div>
+
+                <!-- 第三個輪播項目 (包含圖片、標題與介紹) -->
+                <div class="item">
+                    <img src="change3.jpg">
+                    <div class="carousel-caption">
+                        <h1>來趟旅行－感受異國文化的風情吧!</h1>
+                        <br>
+                        <p class="lead"> </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 輪播控制 -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i
+                class="fas fa-chevron-up"></i></a>
+        <!-- 警報效果 -->
+        <hr>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                            href="#collapse1">✈旅行社網站(點選圖片即可前往)</a></h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <a href="https://www.settour.com.tw/"><img src="agent1jpg.jpg" width="10%" height="10%"></a>
+                        &emsp;&emsp;&emsp;
+                        <a href="https://www.liontravel.com/category/zh-tw/index"><img src="agent2.png" width="10%"
+                                height="10%"></a>
+                        &emsp;&emsp;&emsp;
+                        <a href="https://www.lifetour.com.tw/"><img src="agnet3.png" width="10%" height="10%"></a>
+                        &emsp;&emsp;&emsp;
+                        <a href="https://www.startravel.com.tw/"><img src="agent4.png" width="10%" height="10%"></a>
+                        &emsp;&emsp;&emsp;
+                        <a href="https://www.colatour.com.tw/"><img src="agent5png.png" width="10%" height="10%"></a>
+                        &emsp;&emsp;&emsp;
+                        <a href="https://www.travel.com.tw/"><img src="agent6.png" width="10%" height="10%"></a>
+                        &emsp;&emsp;&emsp;
+                        <a href="https://www.besttour.com.tw/e_web/"><img src="agent8.jpg" width="10%" height="10%"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                            href="#collapse2">🛌訂房網站(點選圖片即可前往)</a></h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <a href="https://www.booking.com/index.zh-tw.html"><img src="ticket.png" width="20%"
+                                height="20%"></a>
+                        <a href="https://www.agoda.com/zh-tw/?cid=1844104"><img src="ticket2.png" width="20%"
+                                height="20%"></a>
+                        <a href="https://tw.hotels.com/"><img src="ticket3.png" width="20%" height="20%"></a>
+                        <a href="https://www.expedia.com.tw/en/?tpid=62&eapid=0"><img src="ticket4.png" width="20%"
+                                height="20%"></a>
+                        <a href="https://hk.trip.com/?locale=zh_hk"><img src="ticket5.jpg" width="15%" height="15%"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                            href="#collapse3">📷相簿(點選圖片即可前往)</a></h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><a href="相簿3.html"><img src="plane.jpg" width="20%" height="20%"></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 內容區 -->
+        <section>
+            <!-- 第一列 -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img class="img-circle" src="first1.jpg" width="160" height="160">
+                    <h3>東京後樂園</h3>
+                    <p>到東京巨蛋城最近的車站有三個，三田線・大江戶線「春日站」、丸之内線・南北線「後樂園站」、JR「水道橋站」。不管從哪個車站走過去都只要5分鐘腳程的時間。</p>
+                    <p><a class="btn btn-info"
+                            href="https://zh.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E5%B7%A8%E8%9B%8B%E5%9F%8E"
+                            role="button">詳細資料&raquo;</a>
+
+                        <a class="btn btn-danger" data-toggle="modal" data-target="#myModal"
+                            role="button">❤收藏&raquo;</a></p>
+                </div>
+
+                <div class="col-md-4">
+                    <img class="img-circle" src="first7jpg.jpg" width="160" height="160">
+                    <h3>伏見稻荷大社</h3>
+                    <p>是一座位於日本京都市伏見區內的神社，是遍及日本全國各地約四萬多所的稻荷神社之總本社，以境內所擁有的「千本鳥居」聞名。</p>
+                    <p><a class="btn btn-info"
+                            href="https://zh.wikipedia.org/wiki/%E4%BC%8F%E8%A6%8B%E7%A8%BB%E8%8D%B7%E5%A4%A7%E7%A4%BE"
+                            role="button">詳細資料&raquo;</a>
+                        <a class="btn btn-danger" data-toggle="modal" data-target="#myModal"
+                            role="button">❤收藏&raquo;</a></p>
+                </div>
+
+                <div class="col-md-4">
+                    <img class="img-circle" src="first3.jpg" width="160" height="160">
+                    <h3>六本木之丘</h3>
+                    <p>到52樓的360度玻璃觀景台，這裡可以眺望新宿超高大樓群、澀谷、橫濱、台場、東京鐵塔、汐留及銀座等整個東京，可說是東京數一數二的夜景。</p>
+                    <p><a class="btn btn-info"
+                            href="https://zh.wikipedia.org/wiki/%E5%85%AD%E6%9C%AC%E6%9C%A8%E6%96%B0%E5%9F%8E"
+                            role="button">詳細資料&raquo;</a>
+                        <a class="btn btn-danger" data-toggle="modal" data-target="#myModal"
+                            role="button">❤收藏&raquo;</a></p>
+                </div>
+            </div>
+
+            <!-- 第二列 -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img class="img-circle" src="first4.jpg" width="160" height="160">
+                    <h3>增上寺</h3>
+                    <p>現在增上寺矗立於東京的近代建築群中，展現其存在感，是和芝公園及東京鐵塔隔鄰，廣為人知的寧靜名勝。</p>
+                    <br>
+                    <p><a class="btn btn-info" href="https://zh.wikipedia.org/wiki/%E5%A2%9E%E4%B8%8A%E5%AF%BA"
+                            role="button">詳細資料&raquo;</a>
+                        <a class="btn btn-danger" data-toggle="modal" data-target="#myModal"
+                            role="button">❤收藏&raquo;</a></p>
+                </div>
+
+                <div class="col-md-4">
+                    <img class="img-circle" src="first5.jpg" width="160" height="160">
+                    <h3>東京晴空塔</h3>
+                    <p>2012年2月29日完工其高度為634公尺，於2011年11月17日獲得金氏世界紀錄認證為「世界第一高塔」，成為全世界最高的塔式建築；目前亦為世界第二高的人工構造物。</p>
+                    <p><a class="btn btn-info" href="#" role="button">詳細資料&raquo;</a>
+                        <a class="btn btn-danger" data-toggle="modal" data-target="#myModal"
+                            role="button">❤收藏&raquo;</a></p>
+
+                </div>
+
+                <div class="col-md-4">
+                    <img class="img-circle" src="first6.jpg" width="160" height="160">
+                    <h3>御台場</h3>
+                    <p>御台場是東京灣內的人工島，島上有許多高科技娛樂設施，彩虹大橋連接東京和御台場，也可以搭乘充滿未來感的百合海鷗號前往。遊客在海濱公園的海灘上留連忘返。</p>
+
+                    <p><a class="btn btn-info" href="#" role="button">詳細資料&raquo;</a>
+                        <a class="btn btn-danger" data-toggle="modal" data-target="#myModal"
+                            role="button">❤收藏&raquo;</a></p>
+                </div>
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                            <img src="jump1.jpg" width="100%" height="50%" class="img-responsive center-block">
+
+
+                        </div>
+
+                        <div class="modal-body">
+                            <p class="h3 text-center">使用文章收藏功能<br>
+                                收藏文章前請先完成註冊
+                            </p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-warning btn-lg"><span
+                                    style="font-family:fantasy;">Register</span> </button>
+
+                            <button type="submit" class="btn btn-success btn-lg"><span style="font-family:fantasy;">Log
+                                    in</span> </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <hr>
+
+    <div style="background-color:#FAFAD2">
+
+
+        <div class="footer_links container">
+            <hr>
+            <div class="row">
+                <div class="col-md-3 col-sm-6" id="footer-know-kkday">
+
+                    <h4>認識這個網站</h4>
+                    <ul>
+                        <li><a href="#">關於這個網站</a></li>
+                        <li class="p"><a href="#">成為會員</a></li>
+                        <li class="p"><a href="#">會員好禮</a></li>
+                        <li class="p"><a href="#">官方網站</a></li>
+
+                    </ul>
+                </div>
+
+
+                <div class="col-md-3 col-sm-6" id="footer-for-travellers">
+                    <h4>使用條款</h4>
+                    <ul>
+
+
+                        <li><a href="#">隱私權保護</a></li>
+                        <li><a href="#">使用者須知</a></li>
+                        <li><a href="#">常見問題與幫助</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- ./col -->
+
+                <div class="col-md-3 col-sm-6" id="footer-for-partner">
+                    <h4>提供意見</h4>
+                    <h5>輸入您的連絡電話</h5>
+
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter phone">
+                    <br>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4>聯絡我們</h4>
+                    <div class="sns">
+                        <img class="img-circle" src="ig.png" width="40" height="40" data-toggle="tooltip"
+                            data-placement="top" title="Welcome">
+                        <img class="img-circle" src="twitter.png" width="40" height="40" data-toggle="tooltip"
+                            data-placement="top" title="to">
+                        <img class="img-circle" src="yt.png" width="40" height="40" data-toggle="tooltip"
+                            data-placement="top" title="my">
+                        <img class="img-circle" src="fb.png" width="50" height="50" data-toggle="tooltip"
+                            data-placement="top" title="travel">
+                        <img class="img-circle" src="line.png" width="40" height="40" data-toggle="tooltip"
+                            data-placement="top" title="page">
+                    </div>
+                    <br>
+                    <p><a class="btn btn-info" href="創作理念.html" role="button">欣賞的網站 &raquo;</a></p>
+                    <p><a class="btn btn-primary" href="創作理念2.html" role="button">創作理念 &raquo;</a></p>
+                </div>
+            </div>
+            <!-- ./row -->
+            <div>
+                <p class="text-left">&copy;2017東京旅遊&middot;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;📣
+                    2021-07-01 updated &emsp;&emsp;
+
+            </div>
+            <div class="gototop">TOP</div>
+
+            <hr>
+            <div>
+
+                <div style="text-align:center">COPYRIGHT © 2021 Jay All rights reserved.
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+            $(window).scroll(function () {
+                //var $(window).scrollTop(); 為 scroll
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 1) {
+                    // 當卷軸超過70px,.gototop就淡入，如果小於就淡出
+                    $(".gototop").fadeIn();
+
+                } else {
+
+                    $(".gototop").fadeOut();
+
+                }
+            });
+            // 當我按下.gototop時，添加動畫讓卷軸跑道最上面
+            $('.gototop').click(function () {
+                $('html,body').animate({
+                    scrollTop: $('html').offset().top
+                })
+
+                return false;
+            });
+
+        })
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phtograph</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        p {
+            font-family: 'Lobster', cursive;
+        }
+
+        .gototop {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-family: verdana;
+            text-align: center;
+            background: #F63E3E;
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            border-radius: 50%;
+            text-decoration: none;
+            cursor: pointer;
+            /*先隱藏*/
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background:#b5e6f9">
+    <!-- 折疊區塊 -->
+    <div class="collapse" id="navbarHeader">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <h4><span class="glyphicon glyphicon-info-sign"></span> 關於照片</h4>
+                    <p>此網站所有的相片皆為作者親自拍攝，如要引用請寄信到 shjay629@gmail.com</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 導覽列 (包含網站名稱與使用指引按鈕)-->
+    <nav class="navbar">
+        <div class="container">
+            <div class="corona-warn" id="corona-warn">
+                <div class="corona-warn-container">
+                    <a href="https://www.cdc.gov.tw/" target="_blank"
+                        onclick="removeCoronaWarnBanner()">⚠️新型冠狀肺炎（武漢肺炎）相關情報</a>
+                </div>
+            </div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- 導覽列的頁首 -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">東京旅遊</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar">
+                            <span class="sr-only">導覽按鈕</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- 導覽列的項目 -->
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class=""><a href="index.html">首頁</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">行程 <span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="圖文介紹行程1.html">Day1~Day3</a></li>
+                                    <li><a href="圖文行程介紹2.html">Day4~Day6</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">相簿 <span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class=""><a href="相簿3.html">Day1~Day2</a></li>
+                                    <li><a href="相簿32.html">Day3~Day4</a></li>
+                                    <li class="active"><a href="相簿33.html">Day5~Day6</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://www.klook.com/zh-TW/">票券</a></li>
+                            <li><a href="https://www.booking.com/index.zh-tw.html">訂房</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">旅遊 <span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="https://travel.liontravel.com/category/zh-tw/index">國外團體</a></li>
+                                    <li><a href="http://www.lifetour.com.tw/oversea/tw/">國內團體</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="https://www.startravel.com.tw/independent.aspx">國外自由行</a></li>
+                                    <li><a href="https://trip.settour.com.tw/">國內自由行</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right">
+                            <div class="form-group">
+                                <input type="text" placeholder="Email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Password" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-success">登入</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <a href="#" class="navbar-brand"><b>東京旅遊相簿</b></a>
+
+
+            <button class="navbar-toggler btn btn-warning navbar-right" type="button" data-toggle="collapse"
+                data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false">
+                <span class="glyphicon glyphicon-question-sign"></span> 照片使用聲名
+            </button>
+
+        </div>
+        <hr>
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="相簿3">相簿</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- 超大螢幕效果 -->
+    <div style="background-image:url(totalphoto.jpg)" class="jumbotron text-center">
+        <div class="container">
+            <h1>Tokyo Travel</h1>
+            <p class="lead">Day5~Day6 Phtograph</p>
+            <a href="https://www.youtube.com/watch?v=5UMIf10Mjzo&list=LL&index=54&ab_channel=%E5%82%91Jay"
+                class="btn btn-info btn-lg">觀賞影片</a>
+            <a href="https://zh.wikipedia.org/wiki/HTC_U11#%E7%9B%B8%E6%A9%9F" class="btn btn-primary btn-lg">相機規格</a>
+        </div>
+    </div>
+
+    <!-- 內容區 -->
+    <section>
+        <div class="container">
+            <!-- 第一列 -->
+            <div class="row">
+                <!-- 第一張圖片 -->
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="day51jpg.jpg">
+                        <div style="text-align:center;" class="caption">
+                            <h4>上野公園</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二張圖片 -->
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="day52.jpg">
+                        <div style="text-align:center;" class="caption">
+                            <h4>千本鳥居</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第三張圖片 -->
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="day54.jpg">
+                        <div style="text-align:center;" class="caption">
+                            <h4>富士電視台</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二列 -->
+            <div class="row">
+                <!-- 第一張圖片 -->
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="day58.jpg">
+                        <div style="text-align:center;" class="caption">
+                            <h4>台場彩虹橋</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二張圖片 -->
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="day56.jpg">
+                        <div style="text-align:center;" class="caption">
+                            <h4>晴空塔</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第三張圖片 -->
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="day57.jpg">
+                        <div style="text-align:center;" class="caption">
+                            <h4>烏龍派出所</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分頁導覽 -->
+            <nav class="text-center">
+                <ul class="pagination">
+                    <li><a href="相簿32.html" aria-label="Previous"><span>&laquo;</span></a></li>
+                    <li><a href="相簿3.html">1</a></li>
+                    <li><a href="相簿32.html">2</a></li>
+                    <li class="active"><a href="相簿33.html">3</a></li>
+
+                    <li><a href="#" aria-label="Next"><span>&raquo;</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <hr>
+
+    <div style="background-color:#FAFAD2">
+
+
+        <div class="footer_links container">
+            <hr>
+            <div class="row">
+                <div class="col-md-3 col-sm-6" id="footer-know-kkday">
+
+                    <h4>認識這個網站</h4>
+                    <ul>
+                        <li><a href="#">關於這個網站</a></li>
+                        <li class="p"><a href="#">成為會員</a></li>
+                        <li class="p"><a href="#">會員好禮</a></li>
+                        <li class="p"><a href="#">官方網站</a></li>
+
+                    </ul>
+                </div>
+
+
+                <div class="col-md-3 col-sm-6" id="footer-for-travellers">
+                    <h4>使用條款</h4>
+                    <ul>
+
+
+                        <li><a href="#">隱私權保護</a></li>
+                        <li><a href="#">使用者須知</a></li>
+                        <li><a href="#">常見問題與幫助</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- ./col -->
+
+                <div class="col-md-3 col-sm-6" id="footer-for-partner">
+                    <h4>提供意見</h4>
+                    <h5>輸入您的連絡電話</h5>
+
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter phone">
+                    <br>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4>聯絡我們</h4>
+                    <div class="sns">
+                        <img class="img-circle" src="ig.png" width="40" height="40" data-toggle="tooltip"
+                            data-placement="top" title="Welcome">
+                        <img class="img-circle" src="twitter.png" width="40" height="40" data-toggle="tooltip"
+                            data-placement="top" title="to">
+                        <img class="img-circle" src="yt.png" width="40" height="40" data-toggle="tooltip"
+                            data-placement="top" title="my">
+                        <img class="img-circle" src="fb.png" width="50" height="50" data-toggle="tooltip"
+                            data-placement="top" title="travel">
+                        <img class="img-circle" src="line.png" width="40" height="40" data-toggle="tooltip"
+                            data-placement="top" title="page">
+                    </div>
+                    <br>
+                    <p><a class="btn btn-info" href="創作理念.html" role="button">欣賞的網站 &raquo;</a></p>
+                    <p><a class="btn btn-primary" href="創作理念2.html" role="button">創作理念 &raquo;</a></p>
+                </div>
+            </div>
+            <!-- ./row -->
+            <div>
+                <p class="text-left">&copy;2017東京旅遊&middot;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;📣
+                    2021-07-01 updated &emsp;&emsp;
+
+            </div>
+            <div class="gototop">TOP</div>
+            <hr>
+            <div>
+
+                <div style="text-align:center">COPYRIGHT © 2021 Jay All rights reserved.
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+            $(window).scroll(function () {
+                //var $(window).scrollTop(); 為 scroll
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 1) {
+                    // 當卷軸超過70px,.gototop就淡入，如果小於就淡出
+                    $(".gototop").fadeIn();
+
+                } else {
+
+                    $(".gototop").fadeOut();
+
+                }
+            });
+            // 當我按下.gototop時，添加動畫讓卷軸跑道最上面
+            $('.gototop').click(function () {
+                $('html,body').animate({
+                    scrollTop: $('html').offset().top
+                })
+
+                return false;
+            });
+
+        })
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+
+</html>
